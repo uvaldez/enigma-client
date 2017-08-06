@@ -1,16 +1,20 @@
 import React from 'react';
-import PurpleAppBar from './PurpleAppBar.js';      // AppBar with simple overrides
-import SuccessButton from './SuccessButton.js';    // A button with complex overrides
-import { Button } from 'react-toolbox/lib/button'; // Bundled component import
+import PropTypes from 'prop-types';
 
-const App = () => (
-  <div>
-    <PurpleAppBar />
-    <section style={{ padding: 20 }}>
-      <SuccessButton label='Success' primary raised />
-      <Button label='Primary Button' primary />
-    </section>
-  </div>
-);
+function App({ children }) {
+  return (
+    <div className="App">
+      {children}
+    </div>
+  );
+}
+
+App.propTypes = {
+  children: PropTypes.node,
+};
+
+App.defaultProps = {
+  children: null,
+};
 
 export default App;
