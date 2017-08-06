@@ -56,14 +56,6 @@ const settings = {
       },
     ]
   },
-  devServer: {
-    contentBase: path.resolve("src/www"),
-    publicPath: "http://localhost:8080/", // full URL is necessary for Hot Module Replacement if additional path will be added.
-    quiet: false,
-    hot: false,
-    historyApiFallback: false,
-    inline: false
-  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.LoaderOptionsPlugin({
