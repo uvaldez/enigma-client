@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const settings = {
   entry: {
     bundle: [
-      "react-hot-loader/patch",
       "./src/frontend/index.js"
     ]
   },
@@ -61,9 +60,9 @@ const settings = {
     contentBase: path.resolve("src/www"),
     publicPath: "http://localhost:8080/", // full URL is necessary for Hot Module Replacement if additional path will be added.
     quiet: false,
-    hot: true,
-    historyApiFallback: true,
-    inline: true
+    hot: false,
+    historyApiFallback: false,
+    inline: false
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
