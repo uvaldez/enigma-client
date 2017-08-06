@@ -63,7 +63,7 @@
   },
   "scripts": {
     "start-dev": "node_modules/.bin/cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server --colors --config webpack.config.js",
-    "build": "node_modules/.bin/cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config webpack.config.js",
+    "build": "NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config webpack.config.js",
     "start": "node server.js",
     "deploy": "gh-pages -d build",
     "lint": "eslint src"
