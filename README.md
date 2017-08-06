@@ -17,5 +17,6 @@ GraphQL server api will need to be running on localhost:8000 if you need to chan
 * [NodeJS](https://nodejs.org)
 * [React.js](https://facebook.github.io/react/)
 * [React Toolbox](http://react-toolbox.com/)
+* [Apollo Client](https://github.com/apollographql/apollo-client)
 * [Webpack](https://webpack.github.io/)
 * [Babel](https://babeljs.io/)
