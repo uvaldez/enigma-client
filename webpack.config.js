@@ -30,15 +30,6 @@ const settings = {
           ],
           plugins: [
             "transform-node-env-inline",
-            new webpack.optimize.DedupePlugin(),
-            new webpack.optimize.OccurrenceOrderPlugin(),
-            new webpack.optimize.CommonsChunkPlugin('bundle', 'bundle.js'),
-            new webpack.optimize.UglifyJsPlugin({
-              compress: {
-                warnings: false,
-                screw_ie8: true
-              }
-            }),
           ],
 
           env: {
