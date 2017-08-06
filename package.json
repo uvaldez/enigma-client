@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "apollo-client": "^1.9.0-1",
+    "express": "^4.15.3",
     "graphql-tag": "^2.4.2",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
@@ -26,8 +27,7 @@
     "react-router-redux": "^4.0.8",
     "react-toolbox": "^2.0.0-beta.5",
     "redux": "3.6",
-    "styled-components": "^2.1.1",
-    "cross-env": "^5.0.3"
+    "styled-components": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
@@ -58,9 +58,9 @@
     "webpack-dev-server": "^2.2.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production webpack --config webpack.config.js",
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "postinstall": "npm install",
+    "start-dev": "node_modules/.bin/cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server --colors --config webpack.config.js",
+    "build": "node_modules/.bin/cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config webpack.config.js",
+    "start": "babel-node server.js --presets es2015,stage-2",
     "deploy": "gh-pages -d build",
     "lint": "eslint src"
   },
