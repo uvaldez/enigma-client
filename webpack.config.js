@@ -1,10 +1,10 @@
-/* eslint-disable */
 const path = require('path');
 const webpack = require('webpack');
 
 const settings = {
   entry: {
     bundle: [
+      "react-hot-loader/patch",
       "./src/frontend/index.js"
     ]
   },
@@ -29,10 +29,12 @@ const settings = {
             "react"
           ],
           plugins: [
-            "transform-node-env-inline",
+            "transform-node-env-inline"
           ],
-
           env: {
+            development: {
+              plugins: ["react-hot-loader/babel"]
+            }
           }
         }
       },
@@ -58,14 +60,15 @@ const settings = {
     contentBase: path.resolve("src/www"),
     publicPath: "http://localhost:8080/", // full URL is necessary for Hot Module Replacement if additional path will be added.
     quiet: false,
-    hot: false,
-    historyApiFallback: false,
-    inline: false
+    hot: true,
+    historyApiFallback: true,
+    inline: true
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.LoaderOptionsPlugin({
-      debug: false
+      debug: true
     }),
   ],
 };

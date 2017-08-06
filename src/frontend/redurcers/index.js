@@ -2,8 +2,10 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 
+// const graphQLServer = 'https://enigma-api.herokuapp.com/graphql';
+const graphQLServer = 'http://localhost:8000/graphql';
 
-const networkInterface = createNetworkInterface({ uri: 'https://enigma-api.herokuapp.com/graphql' });
+const networkInterface = createNetworkInterface({ uri: graphQLServer });
 
 networkInterface.use([{
   applyMiddleware(req, next) {

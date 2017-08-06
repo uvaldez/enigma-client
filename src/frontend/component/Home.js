@@ -231,11 +231,10 @@ const getMessage = graphql(getMessageQuery, {
           });
           return;
         }
-        const d = new Date(result.data.getMessage.expiration);
         self.setState({
           name: result.data.getMessage.name,
           message: result.data.getMessage.message,
-          expiration: new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()),
+          expiration: new Date(result.data.getMessage.expiration),
           dialogActive: false,
         });
       }).catch(() => {
