@@ -67,6 +67,5 @@
     "deploy": "gh-pages -d build",
     "lint": "eslint src"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/react-toolbox/react-toolbox-example#readme"
+  "license": "MIT"
 }
