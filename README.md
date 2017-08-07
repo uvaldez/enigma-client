@@ -12,6 +12,8 @@ A web application that lets users create an encrypted message given a random pas
 
 GraphQL server api will need to be running on localhost:8000 if you need to change your server url go to ```src/frontend/reducers/index.js``` and change graphQLServer variable
 
+Production URL: https://enigma-client.herokuapp.com
+
 ## Built With
 
 * [NodeJS](https://nodejs.org)
